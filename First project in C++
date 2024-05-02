@@ -1,0 +1,466 @@
+e <iostream>
+#include <vector>
+#include <stdlib.h>
+#include <string>
+
+using namespace std;
+
+// This part checks if the OS is Windows or another OS
+
+#ifdef _WIN32 // If the OS is Windows it will replace the cls with CLEAR
+#define CLEAR "cls"
+#else // If not (OS like Linux) it will replace clear with CLEAR
+#define CLEAR "clear"
+#endif
+
+// Function declarations
+void registration(string& teach_id, string& pass, string& f_name, string& l_name);
+bool checknum(string pass);
+bool check_string(string s);
+void Login(string ID, string password, string f_name, string l_name);
+void insertNewStudent(int& numStudents);
+void insertCoursesForStudent(int numStudents);
+void calculateDegreesForStudent(int numStudents);
+
+// Constants for maximum students and courses
+const int MAX_STUDENTS = 100;
+
+// Arrays to store student details
+string studentIds[MAX_STUDENTS];
+string studentNames[MAX_STUDENTS];
+string studentMajors[MAX_STUDENTS];
+
+// Vector to store course names dynamically
+vector<string> courseNames;
+
+int main() {
+	int choice;
+	string teach_id;
+	string pass, f_name, l_name;
+	int numStudents = 0;
+
+	cout << "Hi, teacher" << endl;
+	cout << "Welcome to MMU portal!" << endl;
+
+	// Main menu
+
+	do {
+		cout << "What do you want to do?\n(Choose from below)" << endl;
+		cout << "1. Register as a new teacher" << endl;
+		cout << "2. Login as a teacher" << endl;
+		cout << "3. Exit" << endl;
+		cin >> choice;
+
+		switch (choice) {
+		case 1:
+			system(CLEAR); // Clear console screen
+			registration(teach_id, pass, f_name, l_name);
+			break;
+		case 2:
+			system(CLEAR);
+			Login(teach_id, pass, f_name, l_name);
+			break;
+		case 3:
+			system(CLEAR);
+			cout << "Thank You" << endl;
+			exit(1);
+			break;
+		default:
+			system(CLEAR);
+			cout << "Sorry but this value is not accepted.\nTry again inserting one of the values displayed!\n\n\n" << endl;
+			main();
+		}
+	} while (choice != 3);
+
+	return 0;
+}
+
+// Function to register a new teacher
+void registration(string& teach_id, string& pass, string& f_name, string& l_name) {
+	long long phone;
+	string user, mail;
+
+	// Validates the ID input
+	do {
+		cout << "Insert your unique MMU ID teacher number: " << endl;
+		cin >> teach_id;
+		if (check_string(teach_id) == true) {
+			cout << "Invalid ID ";
+			cout << "you should enter an integer ONLY." << endl;
+		}
+	} while (check_string(teach_id) == true);
+
+	// validates the username input
+	do {
+		cout << "Insert your username: " << endl;
+		cin >> user;
+		if (checknum(user) == true) {
+			cout << "Invalid input! "
+				<< "your username shouldn't include integers" << endl;
+		}
+	} while (checknum(user) == true);
+
+	// Input password
+	cout << "Insert your password:\nMinimum 8 characters including one number" << endl;
+	cin >> pass;
+
+	// Check if the password contains 8 characters
+	while (pass.length() < 8) {
+		cout << "The password is too short, please try again" << endl;
+		cout << "Insert your password:\nMinimum 8 characters" << endl;
+		cin >> pass;
+	}
+	// Check if the password containes any number
+	while (checknum(pass) != true) {
+		cout << "The password does not contain any number, please try again" << endl;
+		cout << "Insert your password:\nMinimum 8 characters and at least one number" << endl;
+		cin >> pass;
+	}
+	cout << "password accepted\nlet's go on!" << endl;
+
+	// Validates first name input
+	do {
+		cout << "Insert your name: " << endl;
+		cin >> f_name;
+		if (checknum(f_name) == true) {
+			cout << "Invalid input! "
+				<< "your first name shouldn't include integers" << endl;
+		}
+	} while (checknum(f_name) == true);
+
+	// Validates last name input
+	do {
+		cout << "Insert your surname: " << endl;
+		cin >> l_name;
+		if (checknum(l_name) == true) {
+			cout << "Invalid input! "
+				<< "your surname shouldn't include integers" << endl;
+		}
+	} while (checknum(l_name) == true);
+
+	// Input phone number
+	cout << "Insert your phone number: +60 " << endl;
+	cin >> phone;
+
+	// Validates phone number
+
+	while (phone < 99999999 || phone > 10000000000) {
+		cout << "The phone number is invalid, please try again" << endl;
+		cin >> phone;
+	}
+	cout << "Phone number accepted\nlet's go on" << endl;
+
+	// Input email address
+	cout << "Insert your e-mail address: " << endl;
+	cin >> mail;
+	system(CLEAR);
+	cout << "Congrats " << f_name << " " << l_name << "," << endl;
+	cout << "Your registration is successfully done!\n" << endl;
+	cout << "For any emergency update, our department will contact you\nwith an SMS on your phone number " << phone << " or\nwith an e-mail to your " << mail << " mail address.\n\n\n" << endl;
+}
+
+// Function to check if a string contains a number
+bool checknum(string pass) {
+	for (int i = 0; i < pass.length(); i++) {
+		if (isdigit(pass[i])) {
+			return true;
+		}
+	}
+	return false;
+}
+
+// Function to check if a string contains letters
+bool check_string(string s) {
+	for (int i = 0; i < s.length(); i++) {
+		if (!isdigit(s[i])) {
+			return true;
+		}
+	}
+	return false;
+}
+
+// Function to handle teacher login
+void Login(string ID, string password, string f_name, string l_name) {
+	string id;
+	int choice = 0;
+	string pass;
+	int numStudents = 0;
+
+	// Check if the ID matches and validate to prevent entering a number
+	do {
+		cout << "Enter your ID: ";
+		cin >> id;
+		if (id != ID) {
+			cout << "Invalid ID ";
+			endl(cout);
+			if (check_string(id) == true) {
+				cout << "you should enter an integer." << endl;
+			}
+		}
+	} while (id != ID);
+
+	// Check if the password matches
+	do {
+		cout << "Enter your password: ";
+		cin >> pass;
+		if (pass != password) {
+			cout << "Invalid password";
+			endl(cout);
+		}
+	} while (pass != password);
+
+	system(CLEAR);
+
+	// Main menu for teacher functions
+	do {
+		endl(cout);
+		cout << "What do you want to do..." << endl
+			<< "1. Insert new student" << endl
+			<< "2. Insert courses for a student" << endl
+			<< "3. Calculating the degrees for a student" << endl
+			<< "4. Go back" << endl;
+		cin >> choice;
+		switch (choice) {
+		case 1:
+			system(CLEAR);
+			insertNewStudent(numStudents);
+			break;
+
+		case 2:
+			system(CLEAR);
+			insertCoursesForStudent(numStudents);
+			break;
+
+		case 3:
+			system(CLEAR);
+			calculateDegreesForStudent(numStudents);
+			break;
+
+		case 4:
+			system(CLEAR);
+			return;
+			break;
+
+		default:
+			system(CLEAR);
+			cout << "Invalid input! "
+				<< "Please enter from 1 to 4" << endl;
+		}
+	} while (choice != 4);
+}
+
+// Function to insert a new student
+void insertNewStudent(int& numStudents) {
+	string studentId;
+	string studentName;
+	string studentMajor;
+
+	do
+	{
+		cout << "Enter new student ID: ";
+		cin >> studentId;
+
+		if (check_string(studentId) == true)
+		{
+			cout << "Invalid input "
+				<< "you should enter an integer ONLY" << endl;
+		}
+
+	} while (check_string(studentId) == true);
+
+	// Checking if the student with the given ID already exists
+	for (int i = 0; i < numStudents; ++i) {
+		if (studentIds[i] == studentId) {
+			cout << "It looks like Student with ID Number " << studentId << " already exists." << endl;
+			return;
+		}
+	}
+
+	// If the student does not exist, the program will progress for a new student
+
+	do
+	{
+		cout << "Enter new student name: ";
+		cin >> studentName;
+
+		if (checknum(studentName) == true)
+		{
+			cout << "Invalid input "
+				<< "you shouldn't enter an integer." << endl;
+		}
+	} while (checknum(studentName) == true);
+
+	do
+	{
+		cout << "Enter new student major: ";
+		cin >> studentMajor;
+
+		if (checknum(studentMajor) == true)
+		{
+			cout << "Invalid input "
+				<< "you shouldn't enter an integer." << endl;
+		}
+	} while (checknum(studentMajor) == true);
+
+	studentIds[numStudents] = studentId;
+	studentNames[numStudents] = studentName;
+	studentMajors[numStudents] = studentMajor;
+	++numStudents;
+
+	system(CLEAR);
+
+	cout << "Great! Student " << studentName << " is added successfully." << endl;
+}
+
+// Function to insert courses for a student
+void insertCoursesForStudent(int numStudents) {
+	string studentId;
+
+	// Ask for the new student ID
+	do
+	{
+		cout << "Enter new student ID: ";
+		cin >> studentId;
+
+		if (check_string(studentId) == true)
+		{
+			cout << "Invalid input "
+				<< "you should enter an integer ONLY" << endl;
+		}
+
+	} while (check_string(studentId) == true);
+
+	// Checking  if the student exists
+	bool studentExists = false;
+	int studentIndex = -1;
+	for (int i = 0; i < numStudents; ++i) {
+		if (studentIds[i] == studentId) {
+			studentExists = true;
+			studentIndex = i;
+			break;
+		}
+	}
+
+	if (!studentExists) {
+		system(CLEAR);
+		cout << "Sorry student with ID " << studentId << " does not exist." << endl; //error message will disappear
+		return;
+	}
+
+	// Student exists!, program proceeds to insert courses
+	string studentName = studentNames[studentIndex];
+
+	cout << "Inserting courses for " << studentName << "." << endl;
+
+	string numCourses;
+
+	do
+	{
+		cout << "Enter the number of courses: ";
+		cin >> numCourses;
+
+		if (check_string(numCourses) == true)
+		{
+			cout << "Invalid input "
+				<< "you should enter an integer ONLY" << endl;
+		}
+	} while (check_string(numCourses) == true);
+
+	int numCourses_int = stoi(numCourses);
+
+
+	// Resize the courseNames vector to accommodate the new number of courses
+	courseNames.resize(numCourses_int);
+	for (int i = 0; i < numCourses_int; ++i) {
+		do
+		{
+			cout << "Enter name for course " << (i + 1) << ": ";
+			cin >> courseNames[i];
+
+			if (checknum(courseNames[i]) == true)
+			{
+				cout << "Invalid course name! "
+					<< "You shouldn't enter an integer" << endl;
+			}
+		} while (checknum(courseNames[i]) == true);
+	}
+
+	system(CLEAR);
+	cout << "Great!, Courses for " << studentName << " have been successfully added." << endl;
+}
+
+// Doma Function to calculate degrees for a student
+void calculateDegreesForStudent(int numStudents) {
+	string studentId;
+
+	do
+	{
+		cout << "Enter new student ID: ";
+		cin >> studentId;
+
+		if (check_string(studentId) == true)
+		{
+			cout << "Invalid input "
+				<< "you should enter an integer ONLY" << endl;
+		}
+
+	} while (check_string(studentId) == true);
+
+	// Checking if the student exists
+	bool studentExists = false;
+	int studentIndex = -1;
+	for (int i = 0; i < numStudents; ++i) {
+		if (studentIds[i] == studentId) {
+			studentExists = true;
+			studentIndex = i;
+			break;
+		}
+	}
+
+	if (!studentExists) {
+		system(CLEAR);
+		cout << "Sorry, student with ID " << studentId << " does not exist." << endl;
+		return;
+	}
+
+	string studentName = studentNames[studentIndex];
+	string studentMajor = studentMajors[studentIndex];
+
+	cout << "Calculating degrees for " << studentName << "." << endl;
+
+	const int MAX_DEGREE = 100;
+
+	int totalPoints = 0;
+	int maxPoints = 0;
+
+	// Prompt user to enter degrees for each course
+	for (int i = 0; i < courseNames.size(); ++i) {
+		int degree;
+		cout << "Enter degree for course " << courseNames[i] << " (out of " << MAX_DEGREE << "): ";
+		cin >> degree;
+
+		// Validating the degree
+
+		if (degree < 0 || degree > MAX_DEGREE) {
+			cout << "Invalid degree! Please enter a degree between 0 and " << MAX_DEGREE << "." << endl;
+			--i;
+		}
+		else {
+			// Storing the degree for the student and course
+			cout << "Degree for course " << courseNames[i] << " is recorded as: " << degree << endl;
+
+			// Update total points and maximum points
+			totalPoints += degree;
+			maxPoints += MAX_DEGREE;
+		}
+	}
+
+	// Calculate percentage
+	double percentage = static_cast<double>(totalPoints) / maxPoints * 100;
+
+	system(CLEAR);
+
+	cout << "Total points for " << studentName << ": " << totalPoints << endl;
+	cout << "Maximum possible points: " << maxPoints << endl;
+	cout << "Percentage for " << studentName << " is: " << percentage << "%" << endl;
+}
