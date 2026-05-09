@@ -24,15 +24,25 @@ Cloud & Tools
 AWS Git Jupyter
 
 🚀 Featured Projects
+
+🤖 AI Agent for Automated Billing Collections (SaaS)
+
+An intelligent AI agent designed to automate the debt collection workflow in SaaS platforms — handling overdue invoice detection, customer outreach, and follow-up sequences without manual intervention. Built to reduce churn and recover revenue at scale.
+Python AI Agents Automation FastAPI
+
+https://github.com/FadulSaif/AI-Agent-in-auto-billing-Collections-in-Saas.git
+
 📄 RAG Legal System
-A chatbot that answers natural language questions grounded in PDF documents — no hallucinations, just answers pulled from your actual content.
-Built with LangChain and HuggingFace.
+A RAG system that lets users query PDF documents in natural language and get accurate, grounded answers. No hallucinations, every response is sourced directly from the documents.
+HuggingFace Python RAG
 
+https://github.com/FadulSaif/RAG_System.git
 
-📄 AI Agent in auto billing and collections
+🚀 SpaceX Falcon 9 Landing Prediction
+Predicted whether a Falcon 9 first stage will successfully land (and therefore be reused), directly estimating launch cost savings of up to $100M per flight. Compared Logistic Regression, SVM, Decision Tree, and KNN with hyperparameter tuning — Decision Tree achieved the best cross-validation score of 88.9%. Includes full EDA, SQL analysis, web scraping, and an interactive Plotly Dash dashboard.
+Scikit-learn SQL Plotly Dash BeautifulSoup Pandas
 
-📄 Falcon 9 spaceX launch price prediction
-
+https://github.com/FadulSaif/Falcon9_Launch_Price_Prediction.git
 
 
 🏆 Highlights
