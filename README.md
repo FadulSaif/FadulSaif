@@ -47,6 +47,8 @@ https://github.com/FadulSaif/Falcon9_Launch_Price_Prediction.git
 
 🏆 Highlights
 
+🥈 Silver Medal, iNVENTX 2026 (Multimedia University, Malaysia)
+🥈 Silver Medal, ITEX 2026 (International Invention, Innovation, Technology Competition & Exhibition, Malaysia)
 🥈 2nd Place — AI READY ASEAN 2025 Competition
 🎓 Dean's Award recipient
 🌍 IBM Data Science professional certificate
