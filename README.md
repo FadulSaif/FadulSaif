@@ -40,7 +40,9 @@ AI Engineer focused on building **LLM applications, RAG systems, AI agents, mach
 ### Highlights
 
 🥈 ITEX 2026 Silver Medal • 🥈 iNVENTX 2026 Silver Medal  
+
 🥈 2nd Place — AI READY ASEAN 2025  
+
 🎓 2 times Dean's List Recipient 🎓
 
 📊 IBM Data Science Professional Certificate
