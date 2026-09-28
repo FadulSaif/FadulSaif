@@ -1,55 +1,54 @@
-Hey, I'm Fadul 👋
-I'm a final-year Computer Science (AI) student at Multimedia University, passionate about building intelligent systems that actually solve real problems, from RAG-powered document chatbots to machine learning pipelines to automation workflow.
+<div align="center">
 
-🤖 What I work on
+# Hi, I'm Fadul Saif
 
-Machine Learning & AI — classification, predictive modelling, model comparison
-RAG & LLM Applications — PDF-grounded chatbots, document Q&A systems
-Data Analytics — dashboards, visual insights with Power BI
-Automation — building tools that save time and reduce manual work
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=650&lines=AI+Engineer;Building+RAG+%26+LLM+Applications;AI+Agents+%26+Automation;Machine+Learning+%7C+FastAPI+%7C+Python)](https://git.io/typing-svg)
 
+AI Engineer focused on building **LLM applications, RAG systems, AI agents, machine learning pipelines, and intelligent automation.**
 
-🛠️ Tech stack
-Languages
-Python C++ SQL
-ML & AI
-Scikit-learn PyTorch TensorFlow HuggingFace
-LLM & RAG
-LangChain HuggingFace Transformers
-Data & Visualization
-Power BI Pandas NumPy Matplotlib
-APIs & Backend
-FastAPI Flask
-Cloud & Tools
-AWS Git Jupyter
+</div>
 
-🚀 Featured Projects
+---
 
-🤖 AI Agent for Automated Billing Collections (SaaS)
+### Tech
 
-An intelligent AI agent designed to automate the debt collection workflow in SaaS platforms — handling overdue invoice detection, customer outreach, and follow-up sequences without manual intervention. Built to reduce churn and recover revenue at scale.
-Python AI Agents Automation FastAPI
+`Python` `FastAPI` `PostgreSQL` `Docker` `n8n`  
+`OpenAI` `RAG` `AI Agents` `Hugging Face` `Scikit-learn`
 
-https://github.com/FadulSaif/AI-Agent-in-auto-billing-Collections-in-Saas.git
+---
 
-📄 RAG Legal System
-A RAG system that lets users query PDF documents in natural language and get accurate, grounded answers. No hallucinations, every response is sourced directly from the documents.
-HuggingFace Python RAG
+### Featured Work
 
-https://github.com/FadulSaif/RAG_System.git
+**SuaraMY**
+- AI-powered sentiment analysis and topic classification platform.
+- Built for filtering, analytics, reporting, and multi-source data processing.
 
-🚀 SpaceX Falcon 9 Landing Prediction
-Predicted whether a Falcon 9 first stage will successfully land (and therefore be reused), directly estimating launch cost savings of up to $100M per flight. Compared Logistic Regression, SVM, Decision Tree, and KNN with hyperparameter tuning — Decision Tree achieved the best cross-validation score of 88.9%. Includes full EDA, SQL analysis, web scraping, and an interactive Plotly Dash dashboard.
-Scikit-learn SQL Plotly Dash BeautifulSoup Pandas
+**AI Billing & Collections Agent**
+- Automates overdue invoice detection and customer follow-up workflows.
+- Combines AI agents, machine learning, APIs, automation, and databases.
 
-https://github.com/FadulSaif/Falcon9_Launch_Price_Prediction.git
+**AI Job Scraper**
+- Automates job discovery and filtering for relevant AI and ML roles.
+- Designed to reduce manual searching and surface higher-fit opportunities.
 
+**RAG Legal System**
+- Enables natural-language querying over PDF and legal documents.
+- Uses semantic retrieval to generate grounded, document-based answers.
 
-🏆 Highlights
+---
 
-🥈 Silver Medal, iNVENTX 2026 (Multimedia University, Malaysia)
-🥈 Silver Medal, ITEX 2026 (International Invention, Innovation, Technology Competition & Exhibition, Malaysia)
-🥈 2nd Place — AI READY ASEAN 2025 Competition
-🎓 Dean's Award recipient
-🌍 IBM Data Science professional certificate
-☁️ AWS Cloud Foundations 
+### Highlights
+
+🥈 ITEX 2026 Silver Medal • 🥈 iNVENTX 2026 Silver Medal  
+🥈 2nd Place — AI READY ASEAN 2025  
+🎓 Dean's List • 🎓 Dean's List  
+📊 IBM Data Science Professional Certificate
+
+---
+
+### Connect
+
+[LinkedIn](https://linkedin.com/in/Fadul-Osman)
+
+---
+
