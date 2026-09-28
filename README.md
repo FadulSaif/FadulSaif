@@ -14,7 +14,7 @@ AI Engineer focused on building **LLM applications, RAG systems, AI agents, mach
 
 `Python` `SQL` `JavaScript` `FastAPI`  
 `Scikit-learn` `XGBoost` `TensorFlow` `PyTorch`  
-`Transformers` `XLM-RoBERTa` `PostgreSQL` `MySQL`  
+`Transformers` `PostgreSQL` `MySQL`  
 `Pandas` `NumPy` `Docker` `REST APIs`  
 `Git/GitHub` `AWS EC2` `AWS S3` `AWS Lambda`
 ---
