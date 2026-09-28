@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hi, I'm Fadul Saif
+# Hi, I'm Fadul Osman
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&center=true&vCenter=true&width=650&lines=AI+Engineer;Building+RAG+%26+LLM+Applications;AI+Agents+%26+Automation;Machine+Learning+%7C+FastAPI+%7C+Python)](https://git.io/typing-svg)
 
@@ -10,11 +10,13 @@ AI Engineer focused on building **LLM applications, RAG systems, AI agents, mach
 
 ---
 
-### Tech
+### Tech Stack
 
-`Python` `FastAPI` `PostgreSQL` `Docker` `n8n`  
-`OpenAI` `RAG` `AI Agents` `Hugging Face` `Scikit-learn`
-
+`Python` `SQL` `JavaScript` `FastAPI`  
+`Scikit-learn` `XGBoost` `TensorFlow` `PyTorch`  
+`Transformers` `XLM-RoBERTa` `PostgreSQL` `MySQL`  
+`Pandas` `NumPy` `Docker` `REST APIs`  
+`Git/GitHub` `AWS EC2` `AWS S3` `AWS Lambda`
 ---
 
 ### Featured Work
